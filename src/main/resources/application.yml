@@ -1,0 +1,7 @@
+## Sync Interval
+time:
+  mills:
+      interval: 60000
+      
+    
+  

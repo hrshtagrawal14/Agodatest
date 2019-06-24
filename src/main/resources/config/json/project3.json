@@ -1,0 +1,22 @@
+{
+"project_id" : "project3",
+"issues" : [
+	{
+		"issue_id" : "issue3",
+		"type" : "bug",
+		"current_state" : "open",
+		"changelogs" : [
+		{
+			"changed_on" : "2019-01-01 12:00pm UTC",
+			"from_state" : "open",
+			"to_state" : "in_progress"
+		},
+		{
+			"changed_on" : "2019-01-03 12:00pm UTC",
+			"from_state" : "in_progress",
+			"to_state" : "testing"
+		}
+	  ]
+	}
+  ]
+}
