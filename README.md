@@ -1,18 +1,7 @@
-# Agoda Coding Challenge
+## Design Diagram
 
-We would like to have a restful getWeeklySummary API for third party bug tracking system. 
-We have an existing third party getIssues API, given a project id, it returns response
-containing issues and other metadata about that project.
 
-We should design the internal API that should be very fast (<50ms milliseconds), near real-time data
-and respect the fact that 3rd party bug tracking system has rate limiting in place 
-(max. /getIssues calls 1 request per minute).
 
-## Getting Started
-
-### Git clone:
-
-Desktop > git clone https://github.com/mkarthick19/Agoda.git
 
 ### Running the application
 
@@ -21,15 +10,6 @@ cd Agoda/
 Agoda > mvn spring-boot:run
 
 ### Get weekly summary API
-cd scripts/
-
-Agoda/scripts > sh getWeeklySummary_project1.sh
- 
-Agoda/scripts > sh getWeeklySummary_project2.sh 
-
-Agoda/scripts > sh getWeeklySummary_project3.sh 
-
-Agoda/scripts > sh getWeeklySummary_badRequest.sh 
 
 ### Running the tests
 Agoda/> mvn test
@@ -49,8 +29,7 @@ Sample Request:
 "states" : ["open"]
 }
 
-
-Agoda/scripts > sh getWeeklySummary_project1.sh 
+Response-
 
 
  {
@@ -124,13 +103,12 @@ Agoda/scripts > sh getWeeklySummary_project1.sh
 Our Bug tracking system has 3 main things:
 
 1. Populate local data structures for input requests.
-2. Sync Service
-3. Get Weekly Summary
+2. Scheduler Service
+3. Get Weekly Summary endpoint
 
 ### Input Request:
 
-Each input request is validated and once the validation is successful, we maintain 2 maps, 
-New Project Map and Old Project Map.
+Each input request is validated and once the validation is successful, we maintain 2 HashMap for storing the data
 
 New Project Map: Each input project is initially put into new project map with frequency 
 set to 1 and incremented for subsequent requests of that particular project.
@@ -139,7 +117,7 @@ Old Project Map: This map holds already synched projects and its frequency simil
 Project Map.
 
 
-### Sync Service: 
+### Scheduler Service: 
 
 Sync service is responsible for communicating with third party getIssues API every minute 
 (according to properties in application.yml, default is 60000 ms = 1 min) and updates the local data store.
