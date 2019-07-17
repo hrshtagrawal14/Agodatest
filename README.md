@@ -1,9 +1,7 @@
 ## Design Diagram
 
 
-[
-![Untitled Diagram](https://user-images.githubusercontent.com/52158609/60016507-0c7f8f00-96a4-11e9-95a4-094717d4ca8e.jpg)
-](url)
+![Untitled Diagram (1)](https://user-images.githubusercontent.com/1662712/61342057-7552c500-a866-11e9-90cd-b59bef05d00e.jpg)
 
 ### Running the application
 
